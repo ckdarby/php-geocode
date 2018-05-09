@@ -35,6 +35,11 @@ class Location
     private $locality = '';
 
     /**
+     * @var string Neighborhood of the location
+     */
+    private $neighborhood = '';
+
+    /**
      * @var string District of the location
      */
     private $district = '';
@@ -68,6 +73,11 @@ class Location
      * @var string Short Locality of the location
      */
     private $shortLocality = '';
+
+    /**
+     * @var string Short neighborhood of the location
+     */
+    private $shortNeighborhood = '';
 
     /**
      * @var string Short District of the location
@@ -136,6 +146,9 @@ class Location
             } elseif (in_array('locality', $component->types)) {
                 $this->locality = $component->long_name;
                 $this->shortLocality = $component->short_name;
+            } elseif (in_array('neighborhood', $component->types)) {
+                $this->neighborhood = $component->long_name;
+                $this->shortNeighborhood = $component->short_name;
             } elseif (in_array('postal_town', $component->types)) {
                 $this->town = $component->long_name;
                 $this->shortTown = $component->short_name;
@@ -240,6 +253,29 @@ class Location
     public function getShortLocality($default = '')
     {
         return $this->shortLocality ?: $default;
+    }
+
+    /**
+     * Gets the neighborhood of the location
+     *
+     * @param string $default
+     *
+     * @return string
+     */
+    public function getNeighborhood($default = '')
+    {
+        return $this->neighborhood ?: $default;
+    }
+    /**
+     * Gets the short neighborhood of the location
+     *
+     * @param string $default
+     *
+     * @return string
+     */
+    public function getShortNeighborhood($default = '')
+    {
+        return $this->shortNeighborhood ?: $default;
     }
 
     /**

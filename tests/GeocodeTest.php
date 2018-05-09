@@ -105,6 +105,23 @@ class GeocodeTest extends \PHPUnit_Framework_TestCase
             ],
         ];
 
+        $providers[] = [
+            "Oxford High School, North Oxford Rd, Oxford, MI",
+            [
+                'getAddress'            => 'Oxford High School, North Oxford Rd, Oxford, MI',
+                'getCountry'            => 'United States',
+                'getShortCountry'       => 'US',
+                'getNeighborhood'       => 'Oxford',
+                'getShortNeighborhood'  => 'Oxford',
+                'getDistrict'           => 'Michigan',
+                'getShortDistrict'      => 'MI',
+                'getPostcode'           => '48371',
+                'getStreetAddress'      => 'North Oxford Road',
+                'getShortStreetAddress' => 'N Oxford Rd',
+                'getStreetNumber'       => '745',
+            ],
+        ];
+
         return $providers;
     }
 }
